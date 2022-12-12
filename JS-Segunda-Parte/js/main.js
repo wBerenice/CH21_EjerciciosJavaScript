@@ -137,35 +137,22 @@ btnEjercicio05.addEventListener("click", function(event){
 
     let ejercicio05Resultado = document.getElementById("ejercicio05Resultado");
 
-    let numeros = [num1, num2, num3];
-    let numeroElegido = null;
-    
-    numeros.forEach((numero) => {
 
-    if((num2 + num3) !== num1){
-        console.log(`La suma de ${num2} y ${num3} NO dan como resultado ${num1}`)
-    }else if((num2 + num3) == num1){
-        console.log(`La suma de ${num2} y ${num3} SI da como resultado ${num1}`)
-        numeroElegido = num1;
-    }else if((num3 + num1) !== num2){
-        console.log(`La suma de ${num3} y ${num1} NO dan como resultado ${num2}`)
-    }else if((num3 + num1) == num2){
-        console.log(`La suma de ${num3} y ${num1} SI da como resultado ${num2}`)
-        numeroElegido = num2;
-    }else if((num2 + num1) !== num3){
-        console.log(`La suma de ${num2} y ${num1} NO dan como resultado ${num3}`)
-    }else if((num2 + num1) == num3){
-        console.log(`La suma de ${num2} y ${num1} SI da como resultado ${num3}`)
-        numeroElegido = num3;
+    if((num2 + num3) == num1){
+        console.log(`La suma de ${num2} y ${num3} dan como resultado ${num1}`);
+        ejercicio05Resultado.innerHTML = (`La suma de ${num2} y ${num3} dan como resultado ${num1}`);
+    }else if ((num1 + num3) == num2){
+        console.log(`La suma de ${num1} y ${num3} dan como resultado ${num2}`);        
+        ejercicio05Resultado.innerHTML = (`La suma de ${num1} y ${num3} dan como resultado ${num2}`);        
+    }else if((num1 + num2) == num3){
+        console.log(`La suma de ${num1} y ${num2} dan como resultado ${num3}`);          
+        ejercicio05Resultado.innerHTML = (`La suma de ${num1} y ${num2} dan como resultado ${num3}`);          
+    }else{
+        ejercicio05Resultado.innerHTML = (`Ningún número es la suma de los otros dos`);
+        console.log(`Ninguno de los números es la suma de los otros dos`)
     }
 
-    });
-
-    ejercicio05Resultado.innerHTML = `${numeroElegido} es la suma suma de los otros dos números`; 
-
 });
-
-
 
 
 //EJERCICIO 06 - PARTE 2
