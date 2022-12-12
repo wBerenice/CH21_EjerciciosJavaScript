@@ -127,6 +127,46 @@ if((num1 >= 100) && (num1 <= 200)){
 
 //EJERCICIO 05 - PARTE 2
 
+let btnEjercicio05 = document.getElementById("btnEjercicio05");
+
+btnEjercicio05.addEventListener("click", function(event){
+
+    let num1 = parseInt(document.getElementById("ejercicio05Num1").value);
+    let num2 = parseInt(document.getElementById("ejercicio05Num2").value);
+    let num3 = parseInt(document.getElementById("ejercicio05Num3").value);
+
+    let ejercicio05Resultado = document.getElementById("ejercicio05Resultado");
+
+    let numeros = [num1, num2, num3];
+    let numeroElegido = null;
+    
+    numeros.forEach((numero) => {
+
+    if((num2 + num3) !== num1){
+        console.log(`La suma de ${num2} y ${num3} NO dan como resultado ${num1}`)
+    }else if((num2 + num3) == num1){
+        console.log(`La suma de ${num2} y ${num3} SI da como resultado ${num1}`)
+        numeroElegido = num1;
+    }else if((num3 + num1) !== num2){
+        console.log(`La suma de ${num3} y ${num1} NO dan como resultado ${num2}`)
+    }else if((num3 + num1) == num2){
+        console.log(`La suma de ${num3} y ${num1} SI da como resultado ${num2}`)
+        numeroElegido = num2;
+    }else if((num2 + num1) !== num3){
+        console.log(`La suma de ${num2} y ${num1} NO dan como resultado ${num3}`)
+    }else if((num2 + num1) == num3){
+        console.log(`La suma de ${num2} y ${num1} SI da como resultado ${num3}`)
+        numeroElegido = num3;
+    }
+
+    });
+
+    ejercicio05Resultado.innerHTML = `${numeroElegido} es la suma suma de los otros dos números`; 
+
+});
+
+
+
 
 //EJERCICIO 06 - PARTE 2
 
