@@ -20,20 +20,19 @@ btnEjercicio01.addEventListener("click", function(event){
     
         if(numeroMayor == null){
             numeroMayor = numeroActual;
-            console.log(`Se reasignó la variable numeroMayor a ${numeroMayor}`)
+            console.log(`Se reasignó la variable numeroMayor a ${numeroMayor}`);
         }else if(numeroActual > numeroMayor){
             numeroMayor = numeroActual;
-            console.log(`La variable numeroMayor ahora vale ${numeroMayor}`)
+            console.log(`La variable numeroMayor ahora vale ${numeroMayor}`);
         }else if (numeroActual < numeroMayor){
-            console.log(`${numeroActual} es menor que ${numeroMayor}`)
-        }else{
-            console.log(`NO ES UN NÚMERO`)
-        } 
-    }
-    );
+            console.log(`${numeroActual} es menor que ${numeroMayor}`);
+        }
 
-    ejercicio01Resultado.innerHTML = `${numeroMayor} es el número mayor`; 
+}
 
+);
+
+ejercicio01Resultado.innerHTML = `${numeroMayor} es el número mayor`; 
 });
 
 
@@ -77,8 +76,53 @@ btnEjercicio02.addEventListener("click", function(event){
 
 //EJERCICIO 03 - PARTE 2
 
+let btnEjercicio03 = document.getElementById("btnEjercicio03");
+let ejercicio03Resultado = document.getElementById("ejercicio03Resultado");
+
+btnEjercicio03.addEventListener("click", function(event){
+
+let numeroAleatorio = parseInt(Math.random() * 100);
+let inputUsuario;
+
+do {
+    inputUsuario = parseInt(prompt("Ingresa tu número de la suerte"));
+
+    if(inputUsuario > numeroAleatorio){
+        alert("El número es menor")
+    }else if(inputUsuario < numeroAleatorio){
+        alert("El número es mayor")
+    }else if(inputUsuario == numeroAleatorio){
+        alert(`Felicidades, adivinaste! El número era ${numeroAleatorio}`)
+        ejercicio03Resultado.innerHTML = `Felicidades, adivinaste! <strong>El número era ${numeroAleatorio}</strong>`
+    }
+} while (inputUsuario !== numeroAleatorio);
+
+});
+
+
 
 //EJERCICIO 04 - PARTE 2
+let btnEjercicio04 = document.getElementById("btnEjercicio04");
+
+btnEjercicio04.addEventListener("click", function(event){
+
+let num1 = parseInt(document.getElementById("ejercicio04Num1").value);
+let ejercicio04Resultado = document.getElementById("ejercicio04Resultado");
+
+if((num1 >= 100) && (num1 <= 200)){
+    if((num1%3) == 0){
+        console.log(`${num1} es múltiplo de 3`);
+        ejercicio04Resultado.innerHTML = `<strong>${num1} es múltiplo de 3</strong>`
+    }else if((num1%3) != 0){
+        console.log(`${num1} no es múltiplo de 3`);
+        ejercicio04Resultado.innerHTML = `<strong>${num1} no es múltiplo de 3</strong>`
+    }
+}else{
+    console.log("El número está fuera de rango")
+    ejercicio04Resultado.innerHTML = `<strong>ATENCIÓN: El número está fuera de rango`
+}
+
+});
 
 
 //EJERCICIO 05 - PARTE 2
